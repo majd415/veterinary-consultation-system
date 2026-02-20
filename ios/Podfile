@@ -1,7 +1,6 @@
-# Podfile for veterinary-consultation-system iOS
-platform ios, '15.0'
+# Podfile for dogMarket iOS
+platform :ios, '15.0'
 
-# prevent all pods from being installed in the root directory
 use_frameworks!
 use_modular_headers!
 
