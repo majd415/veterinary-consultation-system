@@ -33,6 +33,7 @@ require File.expand_path(
 )
 
 # ✨ إضافة use_modular_headers! لحل مشكلة Swift pods
+use_frameworks!
 use_modular_headers!
 
 flutter_ios_podfile_setup
