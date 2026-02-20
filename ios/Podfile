@@ -1,13 +1,12 @@
 # ios/Podfile
 platform :ios, '15.0'
 
-# Disable CocoaPods analytics
+# تعطيل CocoaPods Analytics
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
 use_frameworks!
 use_modular_headers!
 
 target 'Runner' do
-  # Flutter Pods
-  pod 'Flutter', :path => File.join('Flutter', 'Flutter.framework')
+  flutter_install_all_ios_pods(File.dirname(File.realpath(__FILE__)))
 end
