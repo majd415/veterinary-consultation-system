@@ -21,7 +21,7 @@ workflows:
 
       - name: Build iOS Release
         script: |
-          flutter build ipa --release -t lib/main.dart
+          flutter build ios --release --no-codesign -t lib/main.dart
 
     artifacts:
       - build/ios/ipa/*.ipa
