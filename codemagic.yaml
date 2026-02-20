@@ -6,7 +6,6 @@ workflows:
       flutter: stable
       xcode: latest
       cocoapods: default
-      os: macos   # مهم جداً للبناء الصحيح لـ iOS
 
     scripts:
       - name: Clean and Get Flutter packages
