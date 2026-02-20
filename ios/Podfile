@@ -8,6 +8,7 @@ project 'Runner', {
   'Release' => :release,
 }
 
+# ✨ تعديل دالة flutter_root لقراءة FLUTTER_ROOT من Generated.xcconfig
 def flutter_root
   generated_xcode_build_settings_path = File.expand_path(
     File.join('..', 'Flutter', 'Generated.xcconfig'),
@@ -18,9 +19,14 @@ def flutter_root
     raise "#{generated_xcode_build_settings_path} must exist. Run flutter pub get first"
   end
 
-  File.dirname(File.dirname(generated_xcode_build_settings_path))
+  File.foreach(generated_xcode_build_settings_path) do |line|
+    matches = line.match(/FLUTTER_ROOT\=(.*)/)
+    return matches[1].strip if matches
+  end
+  raise "FLUTTER_ROOT not found in #{generated_xcode_build_settings_path}"
 end
 
+# ✨ تحميل podhelper من flutter_tools
 require File.expand_path(
   File.join('packages', 'flutter_tools', 'bin', 'podhelper'),
   flutter_root
