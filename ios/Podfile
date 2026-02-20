@@ -1,15 +1,29 @@
+# ios/Podfile
 platform :ios, '15.0'
 
-inhibit_all_warnings!
+# CocoaPods analytics disabled
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
+project 'Runner', {
+  'Debug' => :debug,
+  'Profile' => :release,
+  'Release' => :release,
+}
+
+# Don't add use_frameworks! unless you know what you're doing
 use_frameworks!
 use_modular_headers!
 
-target 'Runner' do
-  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+def flutter_root
+  generated_xcode_build_settings_path = File.expand_path(File.join('..', 'Flutter', 'Generated.xcconfig'), __FILE__)
+  unless File.exist?(generated_xcode_build_settings_path)
+    raise "#{generated_xcode_build_settings_path} must exist. If you're running pod install manually, make sure flutter pub get is executed first"
+  end
+  File.dirname(File.dirname(generated_xcode_build_settings_path))
 end
 
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    flutter_additional_ios_build_settings(target)
-  end
+require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelper'), flutter_root)
+
+target 'Runner' do
+  flutter_ios_podfile_setup
 end
