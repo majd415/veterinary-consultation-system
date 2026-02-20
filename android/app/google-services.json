@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "510700126849",
+    "project_id": "dog-vet-chat",
+    "storage_bucket": "dog-vet-chat.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510700126849:android:9ce8dc46d405d1b8d24380",
+        "android_client_info": {
+          "package_name": "com.example.dog_market"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALHvSxYQ3io0hZvtoEL3SdUcE3QGoNNV0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
