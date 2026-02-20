@@ -1,0 +1,10 @@
+# Podfile for veterinary-consultation-system iOS
+platform ios, '15.0'
+
+# prevent all pods from being installed in the root directory
+use_frameworks!
+use_modular_headers!
+
+target 'Runner' do
+  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+end
